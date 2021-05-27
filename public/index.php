@@ -1,30 +1,29 @@
 <?php
 
-require_once __DIR__."./../vendor/autoload.php";
-require_once __DIR__."./../app/Controller/MainController.php";
+require_once __DIR__."/../vendor/autoload.php";
+require_once __DIR__."/../app/Controller/MainController.php";
 
+
+$router = new AltoRouter();
 $controller = new MainController();
 
+//Url avant le /
 define("BASE_URI", $_SERVER['BASE_URI']);
 
-if(isset($_GET['_url'])){
+//1-Méthode HTTP
+//2-URL
+//3-Valeur a retourner quand la route correspond
+//4-(optionnel) Nom de la route
+$router->map( 'GET', '/', 'home', 'home' );
+$router->map( 'GET', '/category', 'category' );
 
-//Url après le /
-$currentUrl = $_GET['_url'];
+$match = $router->match();
 
-}else{
+dump($match);
 
-    $currentUrl = '/';
-}
 
-$pages = [
-    '/'         => 'home',
-    '/category' => 'category'
-];
-
-dump($pages);
-
-$methodToCall = $pages[$currentUrl];
+$methodToCall = $match['target'];
 
 $controller->$methodToCall();
+
 

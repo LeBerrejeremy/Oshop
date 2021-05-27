@@ -40,14 +40,14 @@
     <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light">
       <div class="container-fluid">
         <!-- Navbar Header  -->
-        <a href="<?= BASE_URI ?>" class="navbar-brand">oShop</a>
+        <a href="/" class="navbar-brand">oShop</a>
         <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
           aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
         <!-- Navbar Collapse -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a href="<?= BASE_URI ?>" class="nav-link active">Home</a>
+              <a href="/" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
               <a href="<?= BASE_URI ?>/category" class="nav-link">Catégories</a>
