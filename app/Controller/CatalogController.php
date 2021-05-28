@@ -3,9 +3,26 @@
 class CatalogController{
 
 
-    public function category(){
+    public function category($data){
 
         $this->_show('category');
+    }
+
+    public function brand($data){
+
+        $this->_show('brand');
+    }
+
+    public function product($data){
+
+        $product = new Product( $data['product_id'] );
+
+        $this->_show('product', $product);
+    }
+
+    public function type($data){
+
+        $this->_show('type');
     }
 
     private function _show($viewName, $viewData = []){

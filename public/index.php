@@ -1,9 +1,11 @@
 <?php
 
+
+require_once __DIR__."/../app/utils/Database.php";
 require_once __DIR__."/../vendor/autoload.php";
 require_once __DIR__."/../app/Controller/MainController.php";
 require_once __DIR__."/../app/Controller/catalogController.php";
-
+require_once __DIR__."/../app/models/Product.php";
 
 $router = new AltoRouter();
 
@@ -66,6 +68,6 @@ $methodToCall = $match['target']['method'];
 
 dump($match);
 
-$controller->$methodToCall();
+$controller->$methodToCall($match['params']);
 
 

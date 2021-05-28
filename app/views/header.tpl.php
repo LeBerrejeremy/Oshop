@@ -50,7 +50,7 @@
               <a href="/" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
-              <a href="/category" class="nav-link">Catégories</a>
+              <a href="/catalog/category/<?= $id ?>" class="nav-link">Catégories</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Types de produit</a>
