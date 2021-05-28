@@ -6,7 +6,7 @@
               alt="Card image" class="card-img">
             <div class="card-img-overlay d-flex align-items-center">
               <div class="w-100 py-3">
-                <h2 class="display-3 font-weight-bold mb-4">Vintage</h2><a href="<?= BASE_URI ?>/category" class="btn btn-light">Découvrir</a>
+                <h2 class="display-3 font-weight-bold mb-4">Vintage</h2><a href="/category/1" class="btn btn-light">Découvrir</a>
               </div>
             </div>
           </div>

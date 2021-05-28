@@ -1,20 +1,11 @@
 <?php
 
-class MainController{
+class CatalogController{
 
-    public function home(){
-
-        $this->_show('home');
-    }
 
     public function category(){
 
-        $this->_show('products_list');
-    }
-
-    public function legal(){
-
-        $this->_show('legal');
+        $this->_show('category');
     }
 
     private function _show($viewName, $viewData = []){

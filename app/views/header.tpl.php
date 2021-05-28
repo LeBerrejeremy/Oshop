@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="<?= BASE_URI ?>/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= BASE_URI ?>/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?= BASE_URI ?>/css/styles.css">
   <title>oShop</title>
 </head>
 
@@ -50,7 +50,7 @@
               <a href="/" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
-              <a href="<?= BASE_URI ?>/category" class="nav-link">Catégories</a>
+              <a href="/category" class="nav-link">Catégories</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Types de produit</a>
