@@ -3,8 +3,11 @@
 
 require_once __DIR__."/../app/utils/Database.php";
 require_once __DIR__."/../vendor/autoload.php";
+
+require_once __DIR__."/../app/Controller/CoreController.php";
 require_once __DIR__."/../app/Controller/MainController.php";
 require_once __DIR__."/../app/Controller/catalogController.php";
+
 require_once __DIR__."/../app/models/CoreModel.php";
 require_once __DIR__."/../app/models/Product.php";
 require_once __DIR__."/../app/models/Category.php";

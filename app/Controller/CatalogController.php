@@ -1,20 +1,20 @@
 <?php
 
-class CatalogController{
+class CatalogController extends CoreController{
 
 
     public function category($data){
 
         $category = Category::find( $data['category_id'] );
         dump($category);
-        $this->_show('category');
+        $this->_show('category', ['category' => $category]);
     }
 
     public function brand($data){
 
         $brand = Brand::find( $data['brand_id'] );
         dump($brand);
-        $this->_show('brand');
+        $this->_show('brand', ['brand' => $brand]);
     }
 
     public function product($data){
@@ -28,15 +28,6 @@ class CatalogController{
     public function type($data){
 
         $this->_show('type');
-    }
-
-    private function _show($viewName, $viewData = []){
-
-        $viewData['currentPage'] = $viewName;
-
-        require_once __DIR__."./../views/header.tpl.php";
-        require_once __DIR__."./../views/" . $viewName . ".tpl.php";
-        require_once __DIR__."./../views/footer.tpl.php";
     }
 
 }
