@@ -2,12 +2,6 @@
 
 class CatalogController extends CoreController{
 
-    public function vue($class, $data){
-
-        $obj = $class::find( $data[ $class.'_id' ] );
-        dump($obj);
-        $this->_show($class, [$class => $obj]);
-    }
     /*
     public function category($data){
 

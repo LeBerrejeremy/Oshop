@@ -26,41 +26,37 @@ define("BASE_URI", $_SERVER['BASE_URI']);
 //4-(optionnel) Nom de la route
 $router->map( 'GET', '/',                                 [
                                                                 "controller" => "MainController",
-                                                                "method"     => "home"
+                                                                "model"     => "home"
                                                             ],
                                         "Page Accueil" );
 
 $router->map( 'GET', '/catalog/category/[i:category_id]',  [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "vue",
-                                                                "class"      => "category"
+                                                                "model"      => "category"
                                                             ], 
                                  "Page d'une Category" );
 
 $router->map( 'GET', '/catalog/type/[i:type_id]',      [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "vue",
-                                                                "class"      => "type"
+                                                                "model"      => "type"
                                                             ],    
                                       "Page d'un type" );
 
 $router->map( 'GET', '/catalog/product/[i:product_id]',    [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "vue",
-                                                                "class"      => "product"
+                                                                "model"      => "product"
                                                             ],
                                     "Page d'un produit" );
 
 $router->map( 'GET', '/catalog/brand/[i:brand_id]',        [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "vue",
-                                                                "class"      => "brand"
+                                                                "model"      => "brand"
                                                             ],
                                     "Page d'une marque" );
 
 $router->map( 'GET', '/legal-mentions',                    [
                                                                 "controller" => "MainController",
-                                                                "method"     => "legal"
+                                                                "model"     => "legal"
                                                             ],
                                      "Mentions légales" );
 
@@ -76,9 +72,8 @@ endif;
 $controllerToUse = $match['target']['controller'];
 $controller = new $controllerToUse();
 
-$methodToCall = $match['target']['method'];
-$className = $match['target']['class'];
+$modelName = $match['target']['model'];
 
-$controller->$methodToCall($className, $match['params']);
+$controller->view($modelName, $match['params']);
 
 

@@ -2,6 +2,7 @@
 
 class MainController extends CoreController{
 
+    /*
     public function home(){
 
         $this->_show('home');
@@ -16,6 +17,6 @@ class MainController extends CoreController{
 
         $this->_show('legal');
     }
-
+    */
 
 }
