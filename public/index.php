@@ -12,6 +12,7 @@ require_once __DIR__."/../app/models/CoreModel.php";
 require_once __DIR__."/../app/models/Product.php";
 require_once __DIR__."/../app/models/Category.php";
 require_once __DIR__."/../app/models/Brand.php";
+require_once __DIR__."/../app/models/Type.php";
 
 $router = new AltoRouter();
 
@@ -31,25 +32,29 @@ $router->map( 'GET', '/',                                 [
 
 $router->map( 'GET', '/catalog/category/[i:category_id]',  [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "category"
+                                                                "method"     => "vue",
+                                                                "class"      => "category"
                                                             ], 
                                  "Page d'une Category" );
 
-    $router->map( 'GET', '/catalog/type/[i:type_id]',      [
+$router->map( 'GET', '/catalog/type/[i:type_id]',      [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "type"
+                                                                "method"     => "vue",
+                                                                "class"      => "type"
                                                             ],    
                                       "Page d'un type" );
 
 $router->map( 'GET', '/catalog/product/[i:product_id]',    [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "product"
+                                                                "method"     => "vue",
+                                                                "class"      => "product"
                                                             ],
                                     "Page d'un produit" );
 
 $router->map( 'GET', '/catalog/brand/[i:brand_id]',        [
                                                                 "controller" => "CatalogController",
-                                                                "method"     => "brand"
+                                                                "method"     => "vue",
+                                                                "class"      => "brand"
                                                             ],
                                     "Page d'une marque" );
 
@@ -72,8 +77,8 @@ $controllerToUse = $match['target']['controller'];
 $controller = new $controllerToUse();
 
 $methodToCall = $match['target']['method'];
+$className = $match['target']['class'];
 
-
-$controller->$methodToCall($match['params']);
+$controller->$methodToCall($className, $match['params']);
 
 
