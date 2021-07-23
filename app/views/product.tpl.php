@@ -1,3 +1,4 @@
+<?php dump($viewData) ?>
 <section class="hero">
     <div class="container">
       <!-- Breadcrumbs -->
@@ -16,7 +17,7 @@
         <div class="col-lg-6 col-sm-12">
           <div class="product-image">
             <a href="detail.html" class="product-hover-overlay-link">
-              <img src="images/produits/1-kiss.jpg" alt="product" class="img-fluid">
+              <img src="<?=BASE_URI?>/images/produits/1-kiss.jpg" alt="product" class="img-fluid">
             </a>
           </div>
         </div>

@@ -2,32 +2,31 @@
 
 use Utils\Database;
 
-class Product{
+class Product extends CoreModel{
 
-    private $id;
-    private $name;
-    private $description;
-    private $price;
-    private $picture;
-    private $stock;
-    private $created_at;
-    private $updated_at;
+    protected static $table = "products";
+    protected string $description;
+    protected float $price;
+    protected string $picture;
+    protected int $stock;
+
      
     //Foreingn keys
-    private $brand_id;
-    private $type_id;
-    private $category_id;
+    protected int $brand_id;
+    protected int $type_id;
+    protected int $category_id;
 
-    public function __construct(int $product_id)
-    {
-        $this->id = $product_id;
+    
 
-        $pdo = Database::getPDO();
+    //Getters
+    public function getDescription() { return $this->description; }
+    public function getPrice()       { return $this->price; }
+    public function getPicture()     { return $this->picture; }
+    public function getStock()     { return $this->stock; }
 
-        $sql = 'SELECT * FROM products WHERE id ='.$this->id;
-        $statement = $pdo->query($sql);
-        $product = $statement->fetch(PDO::FETCH_ASSOC);
-        dump($product);
-    }
+    //Setter
+    public function setName ( string $name ) { $this->name = $name; }
+    public function setPrice( float $price )   { $this->price = $price; }
 
+    
 }

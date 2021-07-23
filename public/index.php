@@ -5,7 +5,10 @@ require_once __DIR__."/../app/utils/Database.php";
 require_once __DIR__."/../vendor/autoload.php";
 require_once __DIR__."/../app/Controller/MainController.php";
 require_once __DIR__."/../app/Controller/catalogController.php";
+require_once __DIR__."/../app/models/CoreModel.php";
 require_once __DIR__."/../app/models/Product.php";
+require_once __DIR__."/../app/models/Category.php";
+require_once __DIR__."/../app/models/Brand.php";
 
 $router = new AltoRouter();
 
@@ -55,6 +58,7 @@ $router->map( 'GET', '/legal-mentions',                    [
 
 $match = $router->match();
 
+//dump($match);
 
 if( $match === false):
     exit("404 Not found");
@@ -66,7 +70,6 @@ $controller = new $controllerToUse();
 
 $methodToCall = $match['target']['method'];
 
-dump($match);
 
 $controller->$methodToCall($match['params']);
 
